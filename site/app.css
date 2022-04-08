@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
+.pokeHeader {
+    text-align: center;
+    font-family:'Pokemon Solid', sans-serif;
+    font-size: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pokemon-listing {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 12px;
+    font-family: 'Press Start 2P', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 12px;
+    text-align: center;
+};
+

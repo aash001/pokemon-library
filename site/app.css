@@ -9,15 +9,35 @@
     padding-bottom: 20px;
 }
 
+.pokeSearch {
+    text-align: center;
+}
+
+.pokeCard{
+    font-family: 'Press Start 2P', sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.pokeControls{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
 .pokemon-listing {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10, 1fr);
-    grid-gap: 12px;
-    font-family: 'Press Start 2P', sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 12px;
-    text-align: center;
+    grid-gap: 10px;
 };
-

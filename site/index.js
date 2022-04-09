@@ -9,6 +9,7 @@ function capitalizeFirstLetter(someString) {
 
 function addPokemonImage(pokemon) {
     const pokePics = document.createElement("figure")
+    pokePics.classList.add('pokeCard')
     pokePics.innerHTML = `
     <a href="pokemon.html?pokemon=${pokemon.name}">
         <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />

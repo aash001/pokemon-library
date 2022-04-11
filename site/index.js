@@ -13,7 +13,7 @@ function addPokemonImage(pokemon) {
     pokePics.innerHTML = `
     <a href="pokemon.html?pokemon=${pokemon.name}">
         <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
-        <figcaption>${capitalizeFirstLetter(pokemon.name)}</figcaption>
+        <figcaption>${capitalizeFirstLetter(pokemon.name)} ${pokemon.id}</figcaption>
     </a>
     `
     pokemonListing.append(pokePics)
@@ -33,3 +33,5 @@ fetch(url)
             addPokemonImage(response);
         })
     })
+
+console.log(url);

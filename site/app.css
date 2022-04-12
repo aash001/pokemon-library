@@ -9,16 +9,25 @@
     padding-bottom: 20px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .pokeSearch {
     text-align: center;
 }
 
 .pokeCard{
+    display: block;
     font-family: 'Press Start 2P', sans-serif;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 50px;
     text-align: center;
+}
+
+.pokeNumber {
+    margin-top: 10px;
 }
 
 .pokeControls{

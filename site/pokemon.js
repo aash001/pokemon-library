@@ -2,8 +2,17 @@
 const pokemonListing = document.querySelector(".pokemon-details");
 const pokeAbilities = document.querySelector(".abilities");
 
+//fetch
+const url = new URL(window.location)
+const queryString = new URLSearchParams(url.search)
 
-
+fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
+    .then(response => {
+        return response.json()
+    }).then(parsedResponse => {
+        addPokemonImage(parsedResponse)
+        addPokeAbilities(parsedResponse)
+    })
 
 //functions
 function capitalizeFirstLetter(someString) {
@@ -25,29 +34,22 @@ function addPokeAbilities(Ab) {
     const pokeURLS = pokeAbility.map(result => result.url)
     const pokeFetch = pokeURLS.map(url => fetch(url).then(response => response.json()))
     return Promise.all(pokeFetch).then(pokeResponses => {
-        createPokeList();
+        pokeResponses.forEach(response => {
+            createPokeList(response);
+        })
     })
 }
 
-function createPokeList() {
+function createPokeList(abilityObject) {
     const pokeLi = document.createElement("li")
     pokeLi.innerHTML = `
-    <span class="ability-name">Ability's name goes here</span> 
-    <span class="ability-short-description">Ability's short description goes here</span>
+    <span class="ability-name">${capitalizeFirstLetter(abilityObject.name)}</span>
+    <span class="ability-short-description">${pokeAbilityShortEn(abilityObject)}</span>
     `
     pokeAbilities.append(pokeLi)
 }
 
-//fetch
-const url = new URL(window.location)
-const queryString = new URLSearchParams(url.search)
-
-fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
-    .then(response => {
-        return response.json()
-    }).then(parsedResponse => {
-        addPokemonImage(parsedResponse)
-        console.log(parsedResponse);
-        console.log(parsedResponse.abilities[0].ability.url);
-        addPokeAbilities(parsedResponse)
-    })
+function pokeAbilityShortEn(effectObj) {
+    const test = effectObj.effect_entries.find(element => element.language.name == "en")
+    return test.short_effect
+}

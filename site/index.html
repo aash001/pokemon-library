@@ -3,6 +3,7 @@
 
 <head>
   <title>Pokemon Library</title>
+  <link rel="icon" type="image/jpg" href="pokeball.ico" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
@@ -11,20 +12,22 @@
 </head>
 
 <body>
-
   <header class="pokeHeader">
-    <h1>Pokemon</h1>
+    <h1><a href="index.html">Pokemon</a></h1>
     <div class="pokeSearch">
-      <input type="text" placeholder="search...">
+      <form>
+        <label for="search"></label>
+        <input id="search" name="pokemon" />
+        <input type="submit" value="Gotta Catch Em All!" />
+      </form>
     </div>
-
   </header>
 
   <div class="pokemon-listing">
   </div>
   <div class="pokeControls">
-    <button>Previous</button>
-    <button>Next</button>
+    <button class="left-button">Previous</button>
+    <button class="right-button">Next</buttonclass>
   </div>
 
 </body>

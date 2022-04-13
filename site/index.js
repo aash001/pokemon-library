@@ -1,5 +1,8 @@
 //DOM Objects
 const pokemonListing = document.querySelector(".pokemon-listing");
+const leftButton = document.querySelector('.left-button');
+const rightButton = document.querySelector('.right-button');
+
 
 
 //Functions
@@ -20,8 +23,9 @@ function addPokemonImage(pokemon) {
     pokemonListing.append(pokePics)
 }
 
+
 //Fetch
-const url = "https://pokeapi.co/api/v2/pokemon/?limit=50"
+const url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50"
 fetch(url)
     .then(response => {
         return response.json()
@@ -34,5 +38,3 @@ fetch(url)
             addPokemonImage(response);
         })
     })
-
-console.log(url);

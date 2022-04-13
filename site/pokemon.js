@@ -21,11 +21,12 @@ function capitalizeFirstLetter(someString) {
 
 function addPokemonImage(pokemon) {
     const pokePics = document.querySelector("figure")
-    pokePics.classList.add('pokeCard')
     pokePics.innerHTML = `
-        <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
-        <img src="${pokemon.sprites.back_default}" alt = "${pokemon.name}" />
-        <figcaption>${capitalizeFirstLetter(pokemon.name)}</figcaption>
+        <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+        <img src="${pokemon.sprites.back_default}" alt = "${pokemon.name}"/>
+        <img src="${pokemon.sprites.front_shiny}" alt="${pokemon.name}"/>
+        <img src="${pokemon.sprites.back_shiny}"alt="${pokemon.name}"/>
+        <figcaption class ="pokeName">${capitalizeFirstLetter(pokemon.name)}</figcaption>
             `
 }
 

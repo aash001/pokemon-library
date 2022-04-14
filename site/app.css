@@ -13,6 +13,11 @@
         -5px 5px 0 hsl(222, 48%, 44%);
 }
 
+.pokeSpinner {
+    padding:30px;
+    text-align: center;
+}
+
 body {
     background-color: black;
 }
@@ -84,7 +89,6 @@ h2 {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
-
 }
 
 .hide {

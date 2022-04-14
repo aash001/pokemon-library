@@ -1,8 +1,7 @@
-//DOM Objects
 const pokemonListing = document.querySelector(".pokemon-details");
 const pokeAbilities = document.querySelector(".abilities");
+const pokeSpin = document.querySelector(".pokeSpinner");
 
-//fetch
 const url = new URL(window.location)
 const queryString = new URLSearchParams(url.search)
 
@@ -12,9 +11,9 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
     }).then(parsedResponse => {
         addPokemonImage(parsedResponse)
         addPokeAbilities(parsedResponse)
+        pokeSpin.classList.add("hide")
     })
 
-//functions
 function capitalizeFirstLetter(someString) {
     return someString.charAt(0).toUpperCase() + someString.slice(1)
 }

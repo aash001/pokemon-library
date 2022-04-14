@@ -1,11 +1,8 @@
-//DOM Objects
 const pokemonListing = document.querySelector(".pokemon-listing");
+const pokeSpin = document.querySelector(".pokeSpinner");
 const leftButton = document.querySelector('.left-button');
 const rightButton = document.querySelector('.right-button');
 
-
-
-//Functions
 function capitalizeFirstLetter(someString) {
     return someString.charAt(0).toUpperCase() + someString.slice(1)
 }
@@ -23,8 +20,6 @@ function addPokemonImage(pokemon) {
     pokemonListing.append(pokePics)
 }
 
-
-//Fetch
 const url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50"
 fetch(url)
     .then(response => {
@@ -36,5 +31,6 @@ fetch(url)
     }).then(responses => {
         responses.forEach(response => {
             addPokemonImage(response);
+            pokeSpin.classList.add("hide")
         })
     })

@@ -1,7 +1,5 @@
 const pokemonListing = document.querySelector(".pokemon-listing");
 const pokeSpin = document.querySelector(".pokeSpinner");
-const leftButton = document.querySelector('.left-button');
-const rightButton = document.querySelector('.right-button');
 
 function capitalizeFirstLetter(someString) {
     return someString.charAt(0).toUpperCase() + someString.slice(1)

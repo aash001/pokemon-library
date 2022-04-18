@@ -27,10 +27,6 @@ a {
     color: #ffcb05;
 }
 
-.pokeSearch {
-    text-align: center;
-}
-
 .pokeCard{
     display: block;
     font-family: 'Press Start 2P', sans-serif;
@@ -78,17 +74,6 @@ h2 {
 .pokeNumber {
     margin-top: 10px;
     margin-bottom:10px;
-}
-
-.pokeControls{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
 }
 
 .hide {
